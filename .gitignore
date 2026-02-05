@@ -1,0 +1,6 @@
+__pycache__/
+*.csv
+*.fits
+*.h5
+*.txt
+*.hdf5
