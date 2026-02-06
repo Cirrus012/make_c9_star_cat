@@ -76,7 +76,7 @@ python hst-hugs.py \
   --out_h5 hst_ngc6397.h5
 ```
 
-### Make artificial star gird:
+## 5) Make artificial star gird:
 ```
 python make_Fov_grid_catalog.py \
   --ra0 90 --dec0 20 --theta 126.060924 \
