@@ -90,6 +90,18 @@ Processing Chip 30/30 ...
 ```
 ### Convert to hdf5
 ```
-python csv_to_c9h5.py --csv stars_grid_40_40_90_20_ccd13_minimal.csv --out ./stars_grid_40_40_90_20_ccd13_minimal.h5      
-[OK] Wrote 624000 rows into 13 HEALPix groups in ./stars_grid_40_40_90_20_ccd13_minimal.h5
+python csv_to_c9h5.py --csv stars_grid_40_40_90_20_ccd13_minimal.csv --out ./stars_grid_40_40_90_20_ccd13_minimal.h5
+
+## 6) Make constant psfCube
+1. 我们先创建新目录，存储我们将要生成的新的PSFCube：
 ```
+ls /data/CSSTSim_C9/PSFCube/set1_dynamic/ # 这是我们原来的PSFCube目录
+mkdir /data/CSSTSim_C9/PSFCube/set2_constant/ # 创建新目录，用来新PSF
+```
+2. 根据已有的PSFCube，生成新的PSFCube。在本例中，使用的是 psfCube_6，新的 psfCube_6 所有的 psfMat 都是原 psfCube 中的波段2的第450个PSF。
+```
+python make_constant_psfcube.py --input /data/CSSTSim_C9/PSFCube/set1_dynamic/psfCube_6.h5 --output /data/CSSTSim_C9/PSFCube/set2_constant/psfCube_6.h5 --band 2 \
+  --psf-id 450
+```
+请注意，psfCube与ccd需要匹配。也就是说，不能用psfCube_6.h5生成psfCube_7.h5，因为波段不匹配。
+
