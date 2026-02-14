@@ -91,7 +91,7 @@ Processing Chip 30/30 ...
 ### Convert to hdf5
 ```
 python csv_to_c9h5.py --csv stars_grid_40_40_90_20_ccd13_minimal.csv --out ./stars_grid_40_40_90_20_ccd13_minimal.h5
-
+```
 ## 6) Make constant psfCube
 1. 我们先创建新目录，存储我们将要生成的新的PSFCube：
 ```
