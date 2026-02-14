@@ -79,7 +79,7 @@ python hst-hugs.py \
 ## 5) Make artificial star gird:
 ```
 python make_Fov_grid_catalog.py \
-  --ra0 90 --dec0 20 --theta 126.060924 \
+  --ra0 90 --dec0 20 --theta 0 \
    --nx 40 --ny 40 \
 --app-g 16 22  --out stars_grid_40_40_90_20_ccd13_minimal.csv
 Start generating grid for 30 chips...
